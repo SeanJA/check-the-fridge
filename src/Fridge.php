@@ -24,20 +24,31 @@ class Fridge
     {
         $data = json_decode($json);
 
-        $this->administered = $data->avaccine[0]->cumulative_avaccine;
-        $this->delivered = $data->dvaccine[0]->cumulative_dvaccine;
+        $this->administered = $data->avaccine[0]->cumulative_avaccine?? null;
+        $this->delivered = $data->dvaccine[0]->cumulative_dvaccine?? null;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function contents()
+    public function contents(): string
     {
         return number_format($this->delivered - $this->administered);
     }
 
-    public function percentNotAdministered()
+    /**
+     * @return string
+     */
+    public function percentNotAdministered(): string
     {
         return number_format((($this->delivered - $this->administered) / $this->delivered) * 100, 2);
+    }
+
+    /**
+     * @return bool
+     */
+    public function empty(): bool
+    {
+        return empty($this->delivered);
     }
 }
