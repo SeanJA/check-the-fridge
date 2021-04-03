@@ -33,11 +33,11 @@ class Fridge
      */
     public function contents()
     {
-        return $this->delivered - $this->administered;
+        return number_format($this->delivered - $this->administered);
     }
 
     public function percentNotAdministered()
     {
-        return number_format(($this->contents() / $this->delivered) * 100, 2);
+        return number_format((($this->delivered - $this->administered) / $this->delivered) * 100, 2);
     }
 }
