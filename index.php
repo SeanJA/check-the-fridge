@@ -39,6 +39,11 @@ $fridge = $client->checkTheFridge();
 $loader = new FilesystemLoader(__DIR__ . '/views');
 $twig = new Environment($loader);
 
-echo $twig->render('index.twig', [
-    'fridge' => $fridge
-]);
+if($fridge){
+    echo $twig->render('index.twig', [
+        'fridge' => $fridge
+    ]);
+    return;
+}
+
+echo $twig->render('error.twig');

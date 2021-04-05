@@ -1,22 +1,23 @@
 {
-    "name": "seansandy/check-the-fridge",
-    "authors": [
-        {
-            "name": "SeanJA",
-            "email": "sean.sandy@gmail.com"
-        }
-    ],
-    "autoload" : {
-        "psr-4" : {
-            "CheckTheFridge\\" : "src"
-        }
-    },
-    "require": {
-        "php": "^7.1",
-        "guzzlehttp/guzzle": "^7.3",
-        "kevinrob/guzzle-cache-middleware": "^3.3",
-        "twig/twig": "^3.3",
-        "doctrine/cache": "^1.10"
-    },
-    "description": "Check the fridge"
+  "name": "seansandy/check-the-fridge",
+  "authors": [
+    {
+      "name": "SeanJA",
+      "email": "sean.sandy@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CheckTheFridge\\": "src"
+    }
+  },
+  "require": {
+    "php": "^7.1",
+    "guzzlehttp/guzzle": "^7.3",
+    "kevinrob/guzzle-cache-middleware": "^3.3",
+    "twig/twig": "^3.3",
+    "doctrine/cache": "^1.10",
+    "ext-json": "*"
+  },
+  "description": "Check the fridge"
 }
