@@ -17,4 +17,5 @@ jobs:
         password: ${{secrets.FTP_PASSWORD}}
         username: ${{secrets.FTP_USER}}
         server-dir: ${{secrets.FTP_DIR}}
+        protocol: ftps
         dry-run: true
